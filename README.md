@@ -8,23 +8,23 @@
 
 ## Fasting window
 
-- 250 calories per hour
+- 50 calories per hour
 - refactor not wanting to calculate fasting window logic
 
 ## Repository Structure
 
 ```bash
 .
-├── bmr.py          # calculator script
-├── LICENSE         # MIT License
-├── other_methods   # WIP other methods tried
+├── bmr.py                  # calculator script
+├── LICENSE                 # MIT License
+├── other_methods           # WIP other methods tried
 │   ├── fasting_1.py
 │   └── fasting.py
-├── README.md       # this file
-└── test            # simple unit testing using `pytest`
-    ├── out_imperial.txt
-    ├── out_metric.txt
-    └── test_bmr.py # pytest script
+├── README.md               # this file
+└── test                    # simple unit testing using `pytest`
+    ├── out_imperial.txt    # pytest `readouterr` log
+    ├── out_metric.txt      # pytest `readouterr` log
+    └── test_bmr.py         # pytest script
 ```
 
 ## `test` contains simple unit testing
