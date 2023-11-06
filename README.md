@@ -33,3 +33,4 @@
 
 - make GUI version
 - update README.md
+- update function docstrings
