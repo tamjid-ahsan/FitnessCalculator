@@ -9,7 +9,7 @@
 ## Fasting window
 
 - 50 calories per hour
-- refactor not wanting to calculate fasting window logic
+- TODO: refactor: not wanting to calculate fasting window logic
 
 ## Repository Structure
 
