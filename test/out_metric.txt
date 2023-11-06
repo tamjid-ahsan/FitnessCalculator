@@ -3,7 +3,8 @@ Find out How many calories should you consume daily.
 --------------------------------------------------
 Do you identify as male or female? 
 	> Enter your age in years: Use 'Imperial' or 'Metric' units? 
-	> Enter your weight in kilograms: Enter your height in Centimeters: 
+	> Enter your weight in kilograms: Enter your height in Centimeters: gender: male, weight: 90.0, height: 150.0, age: 33
+
 What is your activity level?
 
 	Sedentary is little to no exercise.

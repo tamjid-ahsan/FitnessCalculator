@@ -4,7 +4,8 @@ Find out How many calories should you consume daily.
 Do you identify as male or female? 
 	> Enter your age in years: Use 'Imperial' or 'Metric' units? 
 	> Enter your weight in Pounds (lbs): Input your height in Feet and Inches
-	Enter your height in Feet:		Enter your height in Inches:	
+	Enter your height in Feet:		Enter your height in Inches:	gender: female, weight: 63.50288, height: 152.4, age: 26
+
 What is your activity level?
 
 	Sedentary is little to no exercise.
@@ -14,10 +15,10 @@ What is your activity level?
 
 Please enter: 'sedentary', 'light', 'moderate',  or 'active': 
 	> --------------------------------------------------------------------------------
-You need to consume 3279 calories a day to maintain your current weight.
+You need to consume 1903 calories a day to maintain your current weight.
 --------------------------------------------------------------------------------
 Do you want to calculate intermittent fasting window? 
 	> 	INFO:  Sedentary: 0, Light: 0.1, Brisk: 0.2, Moderate: 0.3, Fast: 0.4, Rapid: 0.5
 	Enter your intermittent fasting goal (0.0 to 0.5): 
 	> 
-Fasting window is 7 hour, rounded up.
+Fasting window is 4 hour, rounded up.
