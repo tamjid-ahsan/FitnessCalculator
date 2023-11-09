@@ -2,7 +2,12 @@ import warnings
 import math
 
 
-def main(debug=False):
+def main(debug=False) -> None:
+    """_summary_
+
+    Args:
+        debug (bool, optional): _description_. Defaults to False.
+    """
     welcome()
     gender = get_sex()
     age = get_age()
@@ -16,7 +21,7 @@ def main(debug=False):
     if debug:
         print(
             f'gender: {gender}, weight: {weight}, height: {height}, age: {age}')
-    # rest_bmr = calculate_bmr(gender, weight, height, age)
+    # rest_bmr = calculate_bmr(gender, weight, height, age) # old code
     rest_bmr = calculate_bmr(weight, height, age, gender)
     output, activity_level = total_calculation(rest_bmr)
     print(f"{'-'*80}")
@@ -32,12 +37,18 @@ def main(debug=False):
         print("Thanks")
 
 
-def welcome():
+def welcome() -> str:
+    """Welcome message"""
     print(
         f"Welcome to your calories calculator powered by python!\nFind out How many calories should you consume daily.\n{'-'*50}")
 
 
-def get_sex():
+def get_sex() -> str:
+    """_summary_
+
+    Returns:
+        str: _description_
+    """
     sexes = ["male", "female", "M", "F", "f", "m", "Male", "Female"]
     while True:
         sex = str(input("Do you identify as male or female? \n\t> "))
@@ -48,7 +59,12 @@ def get_sex():
             break
 
 
-def get_age():
+def get_age() -> int:
+    """_summary_
+
+    Returns:
+        int: _description_
+    """
     age_yrs = int(input("Enter your age in years: "))
     while age_yrs <= 0:
         age_yrs = int(input("Invalid Input. Please enter your age in years: "))
@@ -56,7 +72,12 @@ def get_age():
         return age_yrs
 
 
-def get_measurement_type():
+def get_measurement_type() -> str:
+    """_summary_
+
+    Returns:
+        str: _description_
+    """
     measurement_types: list[str] = ["Imperial", "Metric", "imperial", "metric"]
     while True:
         measurement_type: str = str(
@@ -69,7 +90,12 @@ def get_measurement_type():
         break
 
 
-def get_weight():
+def get_weight() -> float:
+    """_summary_
+
+    Returns:
+        float: _description_
+    """
     weight_kg = float(input("Enter your weight in kilograms: "))
     while weight_kg <= 0:
         weight_kg = float(
@@ -78,7 +104,12 @@ def get_weight():
         return weight_kg
 
 
-def get_height():
+def get_height() -> float:
+    """_summary_
+
+    Returns:
+        float: _description_
+    """
     height_cm = float(input("Enter your height in Centimeters: "))
     while height_cm <= 0:
         height_cm = float(
@@ -87,7 +118,12 @@ def get_height():
         return height_cm
 
 
-def get_weight_imperial():
+def get_weight_imperial() -> float:
+    """_summary_
+
+    Returns:
+        float: _description_
+    """
     weight_lbs = float(input("Enter your weight in Pounds (lbs): "))
     while weight_lbs <= 0:
         weight_lbs = float(
@@ -96,7 +132,12 @@ def get_weight_imperial():
         return weight_lbs * 0.453592  # conversion to kg for calculation
 
 
-def get_height_imperial():
+def get_height_imperial() -> float:
+    """_summary_
+
+    Returns:
+        float: _description_
+    """
     print("Input your height in Feet and Inches")
     height_ft = int(input("\tEnter your height in Feet:\t"))
     height_in = int(input("\tEnter your height in Inches:\t"))
@@ -119,7 +160,18 @@ def get_height_imperial():
 #         men = (weight * 10) + (height * 6.25) - (age * 5) + 5
 #         return int(men)
     
-def calculate_bmr(weight, height, age, sex):
+def calculate_bmr(weight:int, height:float, age:int, sex:str) -> float:
+    """_summary_
+
+    Args:
+        weight (int): _description_
+        height (float): _description_
+        age (int): _description_
+        sex (str): _description_
+
+    Returns:
+        float: _description_
+    """
     if sex == "male":
         bmr = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age)
     else:
@@ -127,7 +179,12 @@ def calculate_bmr(weight, height, age, sex):
     return bmr
 
 
-def get_user_activity():
+def get_user_activity() -> str:
+    """_summary_
+
+    Returns:
+        str: _description_
+    """
     activity_lvl = ["sedentary", "light", "moderate", "active"]
     while True:
         user_lvl = str(input(f"\nWhat is your activity level?\n\n\tSedentary is little to no exercise.\n\tLightly active is light exercise/sports 1 - 3 days/week.\n\tModerately active is moderate exercise/sports 3 - 5 days/week.\n\tVery active is hard exercise every day, or 2 xs/day 6 - 7 days/week.\n\nPlease enter: 'sedentary', 'light', 'moderate',  or 'active': \n\t> "))
@@ -140,30 +197,70 @@ def get_user_activity():
             break
 
 
-def get_sedentary(rest_bmr):
+def get_sedentary(rest_bmr:float) -> float:
+    """_summary_
+
+    Args:
+        rest_bmr (float): _description_
+
+    Returns:
+        float: _description_
+    """
     sedentary = rest_bmr * 1.25
     return sedentary
 
 
-def get_light_activity(rest_bmr):
+def get_light_activity(rest_bmr:float) -> float:
+    """_summary_
+
+    Args:
+        rest_bmr (float): _description_
+
+    Returns:
+        float: _description_
+    """
     light = rest_bmr * 1.375
     return light
 
 
-def get_moderate_activity(rest_bmr):
+def get_moderate_activity(rest_bmr:float) -> str:
+    """_summary_
+
+    Args:
+        rest_bmr (float): _description_
+
+    Returns:
+        str: _description_
+    """
     moderate = rest_bmr * 1.550
     return moderate
 
 
-def get_very_active(rest_bmr):
+def get_very_active(rest_bmr:float) -> str:
+    """_summary_
+
+    Args:
+        rest_bmr (float): _description_
+
+    Returns:
+        str: _description_
+    """
     active = rest_bmr * 1.725
     return active
 
 
-def total_calculation(rest_bmr):
-    user_activity_lvl = get_user_activity()
+def total_calculation(rest_bmr:float) -> str:
+    """_summary_
 
-    maintain = {
+    Args:
+        rest_bmr (float): _description_
+
+    Returns:
+        str: _description_
+    """
+    user_activity_lvl:str = get_user_activity()
+
+    maintain: dict[str:float] = {
         "sedentary": get_sedentary(rest_bmr),
         "light": get_light_activity(rest_bmr),
         "moderate": get_moderate_activity(rest_bmr),
@@ -183,14 +280,14 @@ def total_calculation(rest_bmr):
         return ("You need to consume " + str(round(maintain["active"])) + " calories a day to maintain your current weight.", user_activity_lvl)
 
 
-def calculate_intermittent_fasting_window(bmr):
+def calculate_intermittent_fasting_window(bmr:float) -> dict[str:float]:
     """Calculates intermittent fasting window based on BMR and activity level.
 
     Args:
-      bmr: BMR in kilocalories per day.
+        bmr (float): BMR in kilocalories per day.
 
     Returns:
-      Intermittent fasting window in hours.
+        dict: Intermittent fasting window in hours.
     """
     maintain = {
         "sedentary": get_sedentary(bmr),
